@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-import { Form } from "../../molecules";
+import { Form, ErrorsCard } from "../../molecules";
 import { PrimaryText } from "../../atoms";
+import { handleLogin } from "../../../integrations";
 
 interface LoginPageProps extends RouteComponentProps {
   id: string;
@@ -71,6 +72,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ match, history }) => {
                   setPassword("");
                 } else {
                   if (!!input) {
+                    handleLogin(userInput, input);
                     history.push("/dashboard");
                   }
                 }
@@ -98,6 +100,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ match, history }) => {
         variant={"span"}
         content={"Please enter your username and password below"}
       />
+      <ErrorsCard content={usernameErrors.concat(passwordErrors)} />
       <Form
         username={username}
         password={password}
