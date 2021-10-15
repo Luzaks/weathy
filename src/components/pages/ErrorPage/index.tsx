@@ -4,9 +4,7 @@ import { Grid } from "@mui/material";
 
 import { PrimaryText, PrimaryBox } from "../../atoms";
 
-interface ErrorPageProps extends RouteComponentProps {
-  id: string;
-}
+interface ErrorPageProps extends RouteComponentProps {}
 
 export const ErrorPage: React.FC<ErrorPageProps> = () => {
   return (
