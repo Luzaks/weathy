@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Card, Toolbar, Box } from "@mui/material";
 
 import { PrimaryText } from "../../atoms";
+import { sliceString } from "../../../utils";
 
 interface WeatherCardProps {
   cityInfo: any;
@@ -11,6 +12,7 @@ export const WeatherCard: FC<WeatherCardProps> = ({ cityInfo }) => {
   const { condition, temp_f, last_updated } = cityInfo.current;
   const { text } = condition;
   const { name } = cityInfo.location;
+  const lastUpdated = sliceString(last_updated, 0, 10);
   return (
     <Card
       variant={"outlined"}
@@ -62,7 +64,7 @@ export const WeatherCard: FC<WeatherCardProps> = ({ cityInfo }) => {
           color={"#000"}
         />
         <PrimaryText
-          content={`Last update: ${last_updated}`}
+          content={`Last update: ${lastUpdated}`}
           variant={"h3"}
           fontSize={12}
           color={"#000"}
