@@ -57,7 +57,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ history }) => {
   return (
     <Grid
       container
-      xs={12}
       height={"100vh"}
       direction={"column"}
       justifyContent={"center"}
