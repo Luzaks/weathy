@@ -44,7 +44,8 @@ export const DashboardPage: FC<PageProps> = ({ history }) => {
     <Grid
       container
       width={"100vw"}
-      height={"100vh"}
+      height={"fit-content"}
+      minHeight={"100vh"}
       direction={"column"}
       justifyContent={"flex-start"}
       alignItems={"center"}
