@@ -1,43 +1,70 @@
-# Getting Started with Create React App
+# :cloud: Weathy :cloud:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an SPA bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and built under the principles of atomic web design using reusable MaterialUI components.
 
-## Available Scripts
+The app consists of three pages, (only two of them are mandatory):
+- Login page, (Mandatory).
+- Dashboard, (Mandatory).
+- Error, not found, page, (Not Mandatory).
 
-In the project directory, you can run:
+Authentication is basic, using local storage, and it has simple input validation for login.
+Username and password should:
+- Contain at least 6 characters.
+- Not contain special characters and / or spaces.
+- Should not be empty.
 
-### `yarn start`
+The routing system redirect to login, (used as root route), and also let us know if a route exists in the app or not, (it redirects to Error Not Found Page). Navigation is based in this routing system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Inside dashboard, an API call is made using a secret key registered as an env file, you should add your own variable in order to make this call.
+If you have yours, API call will be made normally, and data will render, if you don't set it, Error Boundary will display.
+
+Finally, you can logout by clicking in Logout button inside the Dashboard.
+
+## 👉 Requirements
+
+1. Git in your local environment.
+2. .env file containing a variable with your secret key.
+    - `REACT_APP_SECRET_KEY=<YOUR-SECRET-KEY>`
+2. node installed
+3. yarn installed
+
+## :computer: Getting started
+
+_Runs the app in the development mode._
+
+1. Clone the repo with the SSH.
+2. Open the project in your preferred text editor or IDE.
+3. Navigate to the projects root directory.
+4. Run one of the following commands:
+    - `yarn`
+    - `yarn install`
+5. For start the project run: 
+    - `yarn start`
+6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will also see any lint errors in the console.\
+Remember to restart your localhost anytime you change the .env file.
 
-### `yarn test`
+## 🛠 Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Typescript
+- React
+- MaterialUI
+- Styled Components
+- Local storage
+- Fetch
+- Yarn
+- Atomic desing
 
-### `yarn build`
+## Contact & Support
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🙍 Guadalupe Rangel - luzaks.software@gmail.com - ☄
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You liked it? ⭐️ Star the project!!!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Any comment that you want to send I'll be happy to receive it.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
