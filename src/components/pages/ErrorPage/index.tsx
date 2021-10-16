@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, RouteComponentProps } from "react-router-dom";
+import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 import { PrimaryText, PrimaryBox } from "../../atoms";
@@ -12,10 +12,9 @@ import {
   errorPageLink,
   errorPageSubtitle,
 } from "../../../models";
+import { PageProps } from "../../../utils";
 
-interface ErrorPageProps extends RouteComponentProps {}
-
-export const ErrorPage: React.FC<ErrorPageProps> = () => {
+export const ErrorPage: FC<PageProps> = () => {
   return (
     <Grid
       container

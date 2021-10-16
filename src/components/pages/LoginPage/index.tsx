@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 import { Form, ErrorsCard } from "../../molecules";
 import { PrimaryText } from "../../atoms";
 import { handleLogin } from "../../../integrations";
-import { validateInput } from "../../../utils";
+import { validateInput, PageProps } from "../../../utils";
 import { textVariantSpan, Title, loginSubtitle } from "../../../models";
 
-interface LoginPageProps extends RouteComponentProps {}
-
-export const LoginPage: React.FC<LoginPageProps> = ({ history }) => {
+export const LoginPage: React.FC<PageProps> = ({ history }) => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [usernameErrors, setUsernameErrors] = useState<string[]>([]);

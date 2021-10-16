@@ -1,11 +1,7 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 
 import PrimaryDivStyled from "./index.styles";
-
-interface PrimaryDivProps {
-  children: ReactNode;
-  color?: string;
-}
+import { PrimaryDivProps } from "../../../utils";
 
 export const PrimaryDiv: FC<PrimaryDivProps> = ({ children, color }) => {
   return <PrimaryDivStyled color={color}>{children}</PrimaryDivStyled>;

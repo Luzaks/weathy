@@ -3,14 +3,7 @@ import { Grid, TextField, FormControl } from "@mui/material";
 
 import { PrimaryButton, PrimaryDiv } from "../../atoms";
 import { usernameLabel, passwordLabel, loginButton } from "../../../models";
-
-interface FormProps {
-  username: string;
-  password: string;
-  handleOnChangeUser: (e: any) => void;
-  handleOnChangePass: (e: any) => void;
-  handleSaveForm: () => void;
-}
+import { FormProps } from "../../../utils";
 
 export const Form: FC<FormProps> = ({
   username,

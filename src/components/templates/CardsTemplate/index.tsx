@@ -3,11 +3,7 @@ import { Box } from "@mui/material";
 
 import { PrimaryLoader } from "../../atoms";
 import { WeatherCard } from "../../molecules";
-
-interface CardsTemplateProps {
-  data: any[];
-  isLoading: boolean;
-}
+import { CardsTemplateProps } from "../../../utils";
 
 export const CardsTemplate: FC<CardsTemplateProps> = ({ data, isLoading }) => {
   return (

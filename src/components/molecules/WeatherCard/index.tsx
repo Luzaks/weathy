@@ -2,12 +2,8 @@ import React, { FC } from "react";
 import { Card, Toolbar, Box } from "@mui/material";
 
 import { PrimaryText } from "../../atoms";
-import { sliceString } from "../../../utils";
+import { sliceString, WeatherCardProps } from "../../../utils";
 import { textColor, textVariantHeaderThree } from "../../../models";
-
-interface WeatherCardProps {
-  cityInfo: any;
-}
 
 export const WeatherCard: FC<WeatherCardProps> = ({ cityInfo }) => {
   const { condition, temp_f, last_updated } = cityInfo.current;

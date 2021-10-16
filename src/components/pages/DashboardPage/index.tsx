@@ -1,15 +1,13 @@
-import React, { useEffect, useCallback, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import React, { useEffect, useCallback, useState, FC } from "react";
 import { Grid } from "@mui/material";
 
 import { DashboardNavbar } from "../../organism";
 import { CardsTemplate } from "../../templates";
 import { getData, handleLogout } from "../../../integrations";
 import { locations } from "../../../models";
+import { PageProps } from "../../../utils";
 
-interface DashboardPageProps extends RouteComponentProps {}
-
-export const DashboardPage: React.FC<DashboardPageProps> = ({ history }) => {
+export const DashboardPage: FC<PageProps> = ({ history }) => {
   const [weathers, setWeathers] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 

@@ -3,10 +3,7 @@ import { Card } from "@mui/material";
 
 import { PrimaryText, PrimaryCardContent } from "../../atoms";
 import { textColor, textVariantSpan } from "../../../models";
-
-interface CardsProps {
-  content: string[];
-}
+import { CardsProps } from "../../../utils";
 
 export const ErrorsCard: FC<CardsProps> = ({ content }) => {
   return (

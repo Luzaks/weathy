@@ -9,10 +9,7 @@ import {
   textColor,
   primaryColor,
 } from "../../../models";
-
-interface DashboardNavbarProps {
-  handleLogOut: () => void;
-}
+import { DashboardNavbarProps } from "../../../utils";
 
 export const DashboardNavbar: FC<DashboardNavbarProps> = ({ handleLogOut }) => {
   return (
