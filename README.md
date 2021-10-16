@@ -7,24 +7,24 @@ The app consists of three pages, (only two of them are mandatory):
 - Dashboard, (Mandatory).
 - Error, not found, page, (Not Mandatory).
 
-Authentication is basic, using local storage, and input validation for login.
+Authentication is basic, using local storage, and it has simple input validation for login.
 Username and password should:
 - Contain at least 6 characters.
 - Not contain special characters and / or spaces.
 - Should not be empty.
 
-The routing system redirect to login as a root route, and let us know if a route exists in the app or not, (it redirects to Error Not Found Page). Navigation is based in this routing system.
+The routing system redirect to login, (used as root route), and also let us know if a route exists in the app or not, (it redirects to Error Not Found Page). Navigation is based in this routing system.
 
-Inside dashboard an API call is made, using a secret key registered as an env file, you should add your own variable for made this call.
+Inside dashboard, an API call is made using a secret key registered as an env file, you should add your own variable in order to make this call.
 If you have yours, API call will be made normally, and data will render, if you don't set it, Error Boundary will display.
 
-Finally, you can logout by clicking in Logout button inside the Dasboard.
+Finally, you can logout by clicking in Logout button inside the Dashboard.
 
 ## 👉 Requirements
 
 1. Git in your local environment.
 2. .env file containing a variable with your secret key.
-####`REACT_APP_SECRET_KEY=<YOUR-SECRET-KEY>`
+    - `REACT_APP_SECRET_KEY=<YOUR-SECRET-KEY>`
 2. node installed
 3. yarn installed
 
@@ -33,8 +33,8 @@ Finally, you can logout by clicking in Logout button inside the Dasboard.
 _Runs the app in the development mode._
 
 1. Clone the repo with the SSH.
-2. Navigate to the projects root directory.
-3. Open the project in your preferred text editor or IDE.
+2. Open the project in your preferred text editor or IDE.
+3. Navigate to the projects root directory.
 4. Run one of the following commands:
     - `yarn`
     - `yarn install`
