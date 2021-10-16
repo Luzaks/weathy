@@ -3,6 +3,7 @@ import { Card, Toolbar, Box } from "@mui/material";
 
 import { PrimaryText } from "../../atoms";
 import { sliceString } from "../../../utils";
+import { textColor, textVariantHeaderThree } from "../../../models";
 
 interface WeatherCardProps {
   cityInfo: any;
@@ -37,7 +38,7 @@ export const WeatherCard: FC<WeatherCardProps> = ({ cityInfo }) => {
           content={name}
           variant={"h3"}
           fontSize={16}
-          color={"#fff"}
+          color={textColor}
         />
       </Toolbar>
       <Box
@@ -53,21 +54,18 @@ export const WeatherCard: FC<WeatherCardProps> = ({ cityInfo }) => {
       >
         <PrimaryText
           content={text}
-          variant={"h3"}
+          variant={textVariantHeaderThree}
           fontSize={16}
-          color={"#000"}
         />
         <PrimaryText
           content={temp_f}
-          variant={"h3"}
+          variant={textVariantHeaderThree}
           fontSize={22}
-          color={"#000"}
         />
         <PrimaryText
           content={`Last update: ${lastUpdated}`}
-          variant={"h3"}
+          variant={textVariantHeaderThree}
           fontSize={12}
-          color={"#000"}
         />
       </Box>
     </Card>

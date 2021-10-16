@@ -65,6 +65,7 @@ export const GlobalStyles = () => {
 /* Colors */
 
 export const primaryColor = "#000";
+export const textColor = "#fff";
 
 /* Locations Data */
 
@@ -76,3 +77,19 @@ export const locations = [
   "Boston",
   "Bangalore",
 ];
+
+/* Text Models */
+
+export const textVariantHeader = "h1";
+export const textVariantHeaderThree = "h3";
+export const textVariantSpan = "span";
+
+export const Title = "Weathy";
+export const logoutButton = "Logout";
+export const loginButton = "Login";
+export const usernameLabel = "Username";
+export const passwordLabel = "Password";
+export const loginSubtitle = "Please enter your username and password below";
+export const errorPageTitle = "Page not found";
+export const errorPageSubtitle = "Ups...";
+export const errorPageLink = "go to login";

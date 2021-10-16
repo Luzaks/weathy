@@ -6,6 +6,7 @@ import { Form, ErrorsCard } from "../../molecules";
 import { PrimaryText } from "../../atoms";
 import { handleLogin } from "../../../integrations";
 import { validateInput } from "../../../utils";
+import { textVariantSpan, Title, loginSubtitle } from "../../../models";
 
 interface LoginPageProps extends RouteComponentProps {}
 
@@ -63,11 +64,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ history }) => {
       alignItems={"center"}
       alignSelf={"center"}
     >
-      <PrimaryText fontSize={64} variant={"span"} content={"Weathy"} />
+      <PrimaryText fontSize={64} variant={textVariantSpan} content={Title} />
       <PrimaryText
         fontSize={13}
-        variant={"span"}
-        content={"Please enter your username and password below"}
+        variant={textVariantSpan}
+        content={loginSubtitle}
       />
       <ErrorsCard content={usernameErrors.concat(passwordErrors)} />
       <Form

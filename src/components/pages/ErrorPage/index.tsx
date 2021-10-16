@@ -3,6 +3,15 @@ import { Link, RouteComponentProps } from "react-router-dom";
 import { Grid } from "@mui/material";
 
 import { PrimaryText, PrimaryBox } from "../../atoms";
+import {
+  textVariantHeader,
+  textVariantHeaderThree,
+  textVariantSpan,
+  textColor,
+  errorPageTitle,
+  errorPageLink,
+  errorPageSubtitle,
+} from "../../../models";
 
 interface ErrorPageProps extends RouteComponentProps {}
 
@@ -30,23 +39,23 @@ export const ErrorPage: React.FC<ErrorPageProps> = () => {
         }}
       >
         <PrimaryText
-          content={"Ups..."}
-          variant={"h3"}
+          content={errorPageSubtitle}
+          variant={textVariantHeaderThree}
           fontSize={32}
-          color={"#fff"}
+          color={textColor}
         />
         <PrimaryText
-          content={"Page not found"}
-          variant={"h1"}
+          content={errorPageTitle}
+          variant={textVariantHeader}
           fontSize={64}
-          color={"#fff"}
+          color={textColor}
         />
         <Link to={"/"}>
           <PrimaryText
-            content={"go to login"}
-            variant={"span"}
+            content={errorPageLink}
+            variant={textVariantSpan}
             fontSize={14}
-            color={"#fff"}
+            color={textColor}
           />
         </Link>
       </PrimaryBox>

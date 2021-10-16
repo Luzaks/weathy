@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Grid, TextField, FormControl } from "@mui/material";
 
 import { PrimaryButton, PrimaryDiv } from "../../atoms";
+import { usernameLabel, passwordLabel, loginButton } from "../../../models";
 
 interface FormProps {
   username: string;
@@ -30,7 +31,7 @@ export const Form: FC<FormProps> = ({
         <Grid item xs={12}>
           <FormControl>
             <TextField
-              label="Username"
+              label={usernameLabel}
               value={username}
               onChange={handleOnChangeUser}
             />
@@ -39,7 +40,7 @@ export const Form: FC<FormProps> = ({
         <Grid item xs={12}>
           <FormControl>
             <TextField
-              label="Password"
+              label={passwordLabel}
               value={password}
               onChange={handleOnChangePass}
               type={"password"}
@@ -47,7 +48,7 @@ export const Form: FC<FormProps> = ({
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <PrimaryButton title={"Login"} onClick={() => handleSaveForm()} />
+          <PrimaryButton title={loginButton} onClick={() => handleSaveForm()} />
         </Grid>
       </Grid>
     </PrimaryDiv>
