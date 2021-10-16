@@ -4,7 +4,12 @@ import { Grid } from "@mui/material";
 import { Form, ErrorsCard } from "../../molecules";
 import { PrimaryText } from "../../atoms";
 import { handleLogin } from "../../../integrations";
-import { validateInput, PageProps } from "../../../utils";
+import {
+  validateInput,
+  PageProps,
+  HandleLoginProps,
+  HandleOnChangeProps,
+} from "../../../utils";
 import { textVariantSpan, Title, loginSubtitle } from "../../../models";
 
 export const LoginPage: React.FC<PageProps> = ({ history }) => {
@@ -13,17 +18,17 @@ export const LoginPage: React.FC<PageProps> = ({ history }) => {
   const [usernameErrors, setUsernameErrors] = useState<string[]>([]);
   const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
 
-  const handleOnChangeUser = (e: { target: { value: string } }) => {
+  const handleOnChangeUser = (e: HandleOnChangeProps) => {
     setUsername(e.target.value);
   };
-  const handleOnChangePass = (e: { target: { value: string } }) => {
+  const handleOnChangePass = (e: HandleOnChangeProps) => {
     setPassword(e.target.value);
   };
 
   const handleLoginForm = () => {
     setUsernameErrors([]);
     setPasswordErrors([]);
-    validateInput("username", username).then((r) => {
+    validateInput("username", username).then((r: HandleLoginProps) => {
       if (r) {
         const { hasErrors, input } = r;
         if (hasErrors.length > 0) {
@@ -32,7 +37,7 @@ export const LoginPage: React.FC<PageProps> = ({ history }) => {
         } else {
           if (!!input) {
             const userInput = input;
-            validateInput("password", password).then((r) => {
+            validateInput("password", password).then((r: HandleLoginProps) => {
               if (r) {
                 const { hasErrors, input } = r;
                 if (hasErrors.length > 0) {

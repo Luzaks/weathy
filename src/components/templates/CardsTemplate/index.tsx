@@ -20,7 +20,7 @@ export const CardsTemplate: FC<CardsTemplateProps> = ({ data, isLoading }) => {
     >
       {isLoading && <PrimaryLoader />}
       {!isLoading &&
-        data.map((item, index) => {
+        data.map((item: any, index: number) => {
           return <WeatherCard key={index} cityInfo={item} />;
         })}
     </Box>

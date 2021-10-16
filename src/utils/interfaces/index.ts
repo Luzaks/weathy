@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, RouteProps } from "react-router-dom";
 
 /* Atoms */
 
@@ -35,11 +35,6 @@ export interface CardsProps {
   content: string[];
 }
 
-export interface UserProps {
-  username: string;
-  password: string;
-}
-
 export interface FormProps {
   username: string;
   password: string;
@@ -68,3 +63,25 @@ export interface CardsTemplateProps {
 /* Pages */
 
 export interface PageProps extends RouteComponentProps {}
+
+/* Helpers */
+
+export interface HandleOnChangeProps {
+  target: { value: string };
+}
+
+export interface HandleLoginProps {
+  hasErrors: string[];
+  input: string;
+}
+
+/* Routes */
+
+export interface RouterProps extends RouteProps {}
+
+/* Auth */
+
+export interface UserProps {
+  username: string;
+  password: string;
+}
