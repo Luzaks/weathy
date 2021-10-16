@@ -1,11 +1,10 @@
-import React from "react";
-import { Route, Redirect, RouteProps } from "react-router-dom";
+import React, { FC } from "react";
+import { Route, Redirect } from "react-router-dom";
 
 import { handleSession } from "../../auth";
+import { RouterProps } from "../../../utils";
 
-interface PrivateRouteProps extends RouteProps {}
-
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ ...rest }) => {
+const PrivateRoute: FC<RouterProps> = ({ ...rest }) => {
   if (!handleSession()) return <Redirect exact={true} to="/" />;
   else return <Route {...rest} />;
 };

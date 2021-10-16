@@ -2,10 +2,8 @@ import React, { FC } from "react";
 import { Card } from "@mui/material";
 
 import { PrimaryText, PrimaryCardContent } from "../../atoms";
-
-interface CardsProps {
-  content: string[];
-}
+import { textColor, textVariantSpan } from "../../../models";
+import { CardsProps } from "../../../utils";
 
 export const ErrorsCard: FC<CardsProps> = ({ content }) => {
   return (
@@ -20,7 +18,11 @@ export const ErrorsCard: FC<CardsProps> = ({ content }) => {
           <PrimaryCardContent
             key={index}
             content={
-              <PrimaryText color={"#fff"} variant={"span"} content={item} />
+              <PrimaryText
+                color={textColor}
+                variant={textVariantSpan}
+                content={item}
+              />
             }
           />
         );

@@ -1,10 +1,7 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 
 import StyledCardContent from "./index.styles";
-
-interface CardContentProps {
-  content: ReactNode;
-}
+import { CardContentProps } from "../../../utils";
 
 export const PrimaryCardContent: FC<CardContentProps> = ({ content }) => {
   return <StyledCardContent>{content}</StyledCardContent>;

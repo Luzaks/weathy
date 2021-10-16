@@ -1,13 +1,7 @@
 import React, { FC } from "react";
 
 import TypographyStyled from "./index.styles";
-
-interface PrimaryTextProps {
-  content: string;
-  variant?: any;
-  color?: any;
-  fontSize?: number;
-}
+import { PrimaryTextProps } from "../../../utils";
 
 export const PrimaryText: FC<PrimaryTextProps> = ({
   content,

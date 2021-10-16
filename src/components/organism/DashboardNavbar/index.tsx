@@ -2,10 +2,14 @@ import React, { FC } from "react";
 import { Toolbar } from "@mui/material";
 
 import { PrimaryButton, PrimaryText } from "../../atoms";
-
-interface DashboardNavbarProps {
-  handleLogOut: () => void;
-}
+import {
+  Title,
+  logoutButton,
+  textVariantHeader,
+  textColor,
+  primaryColor,
+} from "../../../models";
+import { DashboardNavbarProps } from "../../../utils";
 
 export const DashboardNavbar: FC<DashboardNavbarProps> = ({ handleLogOut }) => {
   return (
@@ -20,16 +24,16 @@ export const DashboardNavbar: FC<DashboardNavbarProps> = ({ handleLogOut }) => {
         alignItems: "center",
         borderBottomLeftRadius: 4,
         borderBottomRightRadius: 4,
-        backgroundColor: "#000",
+        backgroundColor: primaryColor,
       }}
     >
       <PrimaryText
-        content={"Weathy"}
-        variant={"h1"}
+        content={Title}
+        variant={textVariantHeader}
         fontSize={26}
-        color={"#fff"}
+        color={textColor}
       />
-      <PrimaryButton title={"Logout"} onClick={handleLogOut} />
+      <PrimaryButton title={logoutButton} onClick={handleLogOut} />
     </Toolbar>
   );
 };

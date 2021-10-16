@@ -15,7 +15,7 @@ export const handleLogin = (username: string, password: string) => {
 };
 
 export const handleSession = () => {
-  const storage = localStorage.getItem("usr");
+  const storage: string | null = localStorage.getItem("usr");
   let session: boolean;
   if (storage) {
     const usr = JSON.parse(storage);

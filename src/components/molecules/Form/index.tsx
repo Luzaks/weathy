@@ -1,15 +1,9 @@
 import React, { FC } from "react";
-import { Grid, TextField } from "@mui/material";
+import { Grid, TextField, FormControl } from "@mui/material";
 
 import { PrimaryButton, PrimaryDiv } from "../../atoms";
-
-interface FormProps {
-  username: string;
-  password: string;
-  handleOnChangeUser: (e: any) => void;
-  handleOnChangePass: (e: any) => void;
-  handleSaveForm: () => void;
-}
+import { usernameLabel, passwordLabel, loginButton } from "../../../models";
+import { FormProps } from "../../../utils";
 
 export const Form: FC<FormProps> = ({
   username,
@@ -28,22 +22,26 @@ export const Form: FC<FormProps> = ({
         alignItems={"center"}
       >
         <Grid item xs={12}>
-          <TextField
-            label="Username"
-            value={username}
-            onChange={handleOnChangeUser}
-          />
+          <FormControl>
+            <TextField
+              label={usernameLabel}
+              value={username}
+              onChange={handleOnChangeUser}
+            />
+          </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            label="Password"
-            value={password}
-            onChange={handleOnChangePass}
-            type={"password"}
-          />
+          <FormControl>
+            <TextField
+              label={passwordLabel}
+              value={password}
+              onChange={handleOnChangePass}
+              type={"password"}
+            />
+          </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <PrimaryButton title={"Login"} onClick={() => handleSaveForm()} />
+          <PrimaryButton title={loginButton} onClick={() => handleSaveForm()} />
         </Grid>
       </Grid>
     </PrimaryDiv>

@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -5,10 +6,11 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import { RouterProps } from "../../utils";
 import PrivateRoute from "./PrivateRoute";
 import { LoginPage, DashboardPage, ErrorPage } from "../../components";
 
-export const RouterRoutes = () => {
+export const RouterRoutes: FC<RouterProps> = () => {
   return (
     <Router>
       <Switch>
