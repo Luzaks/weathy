@@ -2,25 +2,31 @@ import React, { useEffect, useCallback, useState, FC } from "react";
 import { Grid } from "@mui/material";
 
 import { DashboardNavbar } from "../../organism";
-import { CardsTemplate } from "../../templates";
+import { CardsTemplate, ErrorBoundary } from "../../templates";
 import { getData, handleLogout } from "../../../integrations";
 import { locations } from "../../../models";
 import { PageProps } from "../../../utils";
 
 export const DashboardPage: FC<PageProps> = ({ history }) => {
   const [weathers, setWeathers] = useState<any>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasErrors, setHasErrors] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const apiHandler = useCallback(() => {
     setIsLoading(true);
     locations.map(async (item: string) => {
       return await getData(item)
         .then((r) => {
-          setWeathers((prevState: any) => [...prevState, r]);
+          if (!r.errors) {
+            setWeathers((prevState: any) => [...prevState, r]);
+          } else {
+            setHasErrors(true);
+          }
           setIsLoading(false);
         })
         .catch((er) => {
           console.error(er);
+          setHasErrors(true);
           setIsLoading(false);
         });
     });
@@ -45,7 +51,11 @@ export const DashboardPage: FC<PageProps> = ({ history }) => {
       alignSelf={"center"}
     >
       <DashboardNavbar handleLogOut={handleLogoutButton} />
-      <CardsTemplate data={weathers} isLoading={isLoading} />
+      {!hasErrors && (
+        <ErrorBoundary>
+          <CardsTemplate data={weathers} isLoading={isLoading} />
+        </ErrorBoundary>
+      )}
     </Grid>
   );
 };

@@ -93,3 +93,5 @@ export const loginSubtitle = "Please enter your username and password below";
 export const errorPageTitle = "Page not found";
 export const errorPageSubtitle = "Ups...";
 export const errorPageLink = "go to login";
+
+export const errorBoundaryTitle = "Something went wrong.";
